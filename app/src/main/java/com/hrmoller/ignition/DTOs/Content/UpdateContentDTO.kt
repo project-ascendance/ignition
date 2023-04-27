@@ -1,5 +1,6 @@
 package com.hrmoller.ignition.DTOs.Content
 
+@kotlinx.serialization.Serializable
 data class UpdateContentDTO (
     val id: Int,
     val type: String,

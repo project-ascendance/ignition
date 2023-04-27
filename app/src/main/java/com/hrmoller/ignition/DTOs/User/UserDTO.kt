@@ -1,5 +1,6 @@
 package com.hrmoller.ignition.DTOs.User
 
+@kotlinx.serialization.Serializable
 class UserDTO(
     val id: Int,
     val firstName: String,

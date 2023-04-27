@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Ignition</string>
+    <string name="BaseURI">https://ascendance.hrmoller.com/api/contents</string>
 </resources>

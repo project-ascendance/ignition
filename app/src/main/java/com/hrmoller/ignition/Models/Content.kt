@@ -14,9 +14,9 @@ class Content {
     var body: String = ""
     var sites: List<String>
     @RequiresApi(Build.VERSION_CODES.O)
-    var releaseDate: LocalDate = LocalDate.now()
+    var activeFrom: LocalDate = LocalDate.now()
     @RequiresApi(Build.VERSION_CODES.O)
-    var expirationDate: LocalDate = LocalDate.now().plusWeeks(1)
+    var activeTo: LocalDate = LocalDate.now().plusWeeks(1)
     var author: String = ""
     @RequiresApi(Build.VERSION_CODES.O)
     var creationTime: LocalDateTime = LocalDateTime.now()

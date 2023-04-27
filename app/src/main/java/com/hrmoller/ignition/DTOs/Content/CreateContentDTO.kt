@@ -1,5 +1,6 @@
 package com.hrmoller.ignition.DTOs.Content
 
+@kotlinx.serialization.Serializable
 data class CreateContentDTO (
     val type: String,
     val title: String,
