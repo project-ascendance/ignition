@@ -1,11 +1,18 @@
 package com.hrmoller.ignition.ViewModels
 
 import com.hrmoller.ignition.Models.Content
+import com.hrmoller.ignition.Services.ContentDatahandler
+import com.hrmoller.ignition.Services.factories.ContentFactory
 
 class EditContentViewModel(
-    var content: Content
+    var content: Content,
+    val datahandler: ContentDatahandler
 ) {
     fun SaveChanges(){
-        //TODO add logic for saving new or updated Content
+
+        if (datahandler.getContent(content.id) == null){
+            datahandler.createContent(content)
+        }
+        else datahandler.updateContent(content)
     }
 }

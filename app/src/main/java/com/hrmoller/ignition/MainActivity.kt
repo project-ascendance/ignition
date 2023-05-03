@@ -1,43 +1,45 @@
 package com.hrmoller.ignition
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material.Scaffold
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.res.colorResource
+import com.example.ignition.R
+import com.hrmoller.ignition.Services.ContentDatahandler
+import com.hrmoller.ignition.ViewModels.ContentListViewModel
+import com.hrmoller.ignition.Views.BottomBar
+import com.hrmoller.ignition.Views.ContentList
+import com.hrmoller.ignition.Views.TopBar
 import com.hrmoller.ignition.ui.theme.IgnitionTheme
+import org.koin.androidx.compose.getViewModel
+import androidx.lifecycle.viewmodel.compose.viewModel
+import org.koin.androidx.compose.get
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContent {
             IgnitionTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    Greeting("Android")
-                }
+                val contentListViewModel = getViewModel<ContentListViewModel>()
+                Scaffold(
+                    topBar = {
+                        TopBar()
+                    },
+                    bottomBar = {
+                        BottomBar()
+                    },
+                    backgroundColor = colorResource(id = R.color.top_bar_bg),
+                    modifier = Modifier.fillMaxSize()
+                ) { paddingValues ->
+                    Modifier.padding(paddingValues)
+                    ContentList(contentListViewmodel = contentListViewModel) }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    IgnitionTheme {
-        Greeting("Android")
     }
 }

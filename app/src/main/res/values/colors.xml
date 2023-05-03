@@ -7,4 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    // Top bar colors
+    <color name="top_bar_bg">#00937B</color>
+    <color name="top_bar_bg2">#006252</color>
 </resources>

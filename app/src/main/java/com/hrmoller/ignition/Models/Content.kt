@@ -10,14 +10,13 @@ class Content {
     var id: Int = 0
     var title: String = ""
     var type: String = ""
-    var image: Image = TODO()
+    var image: String? = ""
     var body: String = ""
-    var sites: List<String>
-    @RequiresApi(Build.VERSION_CODES.O)
-    var activeFrom: LocalDate = LocalDate.now()
-    @RequiresApi(Build.VERSION_CODES.O)
-    var activeTo: LocalDate = LocalDate.now().plusWeeks(1)
+    var sites: List<String> = mutableListOf()
+    var activeFrom: String = ""
+    var activeTo: String = ""
     var author: String = ""
-    @RequiresApi(Build.VERSION_CODES.O)
-    var creationTime: LocalDateTime = LocalDateTime.now()
+    var creationTime: String = ""
+
+
 }

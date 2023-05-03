@@ -1,3 +1,10 @@
 package com.hrmoller.ignition.Views
 
-    //TODO Implement Composable bar for sorting Contents
+import androidx.compose.runtime.Composable
+
+//TODO Implement Composable bar for sorting Contents
+
+@Composable
+fun SortByDropdown(){
+
+}

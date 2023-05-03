@@ -7,9 +7,9 @@ data class UpdateContentDTO (
     val title: String,
     val sites: List<String>,
     val body: String,
-    val image: String,
-    val releaseDate: String,
-    val expirationDate: String,
+    val image: String?,
+    val activeFrom: String,
+    val activeTo: String,
     val creationTime: String,
     val author: String
     ) {
